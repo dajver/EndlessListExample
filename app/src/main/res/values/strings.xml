@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EndlessList</string>
+    <string name="search">Search here</string>
+    <string name="search.button">Search</string>
+</resources>
