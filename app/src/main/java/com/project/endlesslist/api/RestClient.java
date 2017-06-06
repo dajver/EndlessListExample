@@ -1,9 +1,5 @@
 package com.project.endlesslist.api;
 
-import com.google.gson.Gson;
-
-import java.util.concurrent.TimeUnit;
-
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -23,10 +19,6 @@ public class RestClient {
         return instance.service;
     }
 
-    public static Gson gson() {
-        return new Gson();
-    }
-
     private final API service;
 
     public RestClient() {
@@ -44,8 +36,6 @@ public class RestClient {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
-                .readTimeout(60, TimeUnit.SECONDS)
-                .connectTimeout(60, TimeUnit.SECONDS)
                 .build();
         return client;
     }

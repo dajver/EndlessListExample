@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 
 public class ReposRecycleViewAdapter extends RecyclerView.Adapter<ReposRecycleViewAdapter.ViewHolder>{
 
-    private List<GithubItemModel> realmModels = new ArrayList<>();
+    private List<GithubItemModel> githubItemModels = new ArrayList<>();
     private Context context;
 
     public ReposRecycleViewAdapter(Context context) {
@@ -30,7 +30,7 @@ public class ReposRecycleViewAdapter extends RecyclerView.Adapter<ReposRecycleVi
     }
 
     public void addItem(GithubItemModel githubItemModel) {
-        realmModels.add(githubItemModel);
+        githubItemModels.add(githubItemModel);
     }
 
     @Override
@@ -42,13 +42,13 @@ public class ReposRecycleViewAdapter extends RecyclerView.Adapter<ReposRecycleVi
 
     @Override
     public void onBindViewHolder(final ReposRecycleViewAdapter.ViewHolder holder, final int position) {
-        holder.name.setText(realmModels.get(position).getName());
-        holder.description.setText(realmModels.get(position).getDescription());
+        holder.name.setText(githubItemModels.get(position).getName());
+        holder.description.setText(githubItemModels.get(position).getDescription());
     }
 
     @Override
     public int getItemCount() {
-        return realmModels.size();
+        return githubItemModels.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
